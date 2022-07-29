@@ -45,7 +45,21 @@ namespace InfilonMVCWebApp.Controllers
                 PropertyNameCaseInsensitive = true
             };
             user = JsonSerializer.Deserialize<List<User>>(responseString, options);
-            return View(user);
+            List<User> userData = _db.tblUsers.ToList();
+            if (userData.Count == 0)
+            {
+
+                foreach (User data in user)
+                {
+                    _db.tblUsers.Add(data);
+                }
+                await _db.SaveChangesAsync();
+                return View(user);
+            }
+            else
+            {
+                return View(userData);
+            }
         }
 
         public async Task<IActionResult> Edit(int Id)
@@ -93,39 +107,40 @@ namespace InfilonMVCWebApp.Controllers
 
         public async Task<IActionResult> PostData()
         {
-             try
-              {
+            /*  try
+               {
 
-                var request = new HttpRequestMessage(HttpMethod.Get, "https://jsonplaceholder.typicode.com/users/1/todos");
+                 var request = new HttpRequestMessage(HttpMethod.Get, "https://jsonplaceholder.typicode.com/users/1/todos");
 
-                var httpClient = _httpClientFactory.CreateClient();
+                 var httpClient = _httpClientFactory.CreateClient();
 
-                var response = await httpClient.SendAsync(request);
+                 var response = await httpClient.SendAsync(request);
 
-                if (!response.IsSuccessStatusCode)
-                {
-                    return NotFound();
-                }
+                 if (!response.IsSuccessStatusCode)
+                 {
+                     return NotFound();
+                 }
 
-                var responseString = await response.Content.ReadAsStringAsync();
-                var options = new JsonSerializerOptions
-                {
-                    PropertyNameCaseInsensitive = true
-                };
-                
-                List<User> userData = JsonSerializer.Deserialize<List<User>>(responseString, options);
-                foreach (User data in userData)
-                  { 
-                      _db.tblUsers.Add(data);
-                  }
-                await _db.SaveChangesAsync();
-                return Ok();
-            }
-              catch (Exception ex)
-              {
-                  throw ex;
-              }
-           
+                 var responseString = await response.Content.ReadAsStringAsync();
+                 var options = new JsonSerializerOptions
+                 {
+                     PropertyNameCaseInsensitive = true
+                 };
+
+                 List<User> userData = JsonSerializer.Deserialize<List<User>>(responseString, options);
+                 foreach (User data in userData)
+                   { 
+                       _db.tblUsers.Add(data);
+                   }
+                 await _db.SaveChangesAsync();
+                 return Ok();
+             }
+               catch (Exception ex)
+               {
+                   throw ex;
+               }
+            */
+            return Ok();
         }
     }
 }

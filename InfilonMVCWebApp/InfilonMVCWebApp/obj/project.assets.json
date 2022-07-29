@@ -1902,11 +1902,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\USER\\source\\repos\\InfilonMVCWebApp\\InfilonMVCWebApp\\InfilonMVCWebApp.csproj",
+      "projectUniqueName": "C:\\Users\\USER\\Documents\\GitHub\\harshitaKomlekar\\InfilonMVCWebApp\\InfilonMVCWebApp\\InfilonMVCWebApp.csproj",
       "projectName": "InfilonMVCWebApp",
-      "projectPath": "C:\\Users\\USER\\source\\repos\\InfilonMVCWebApp\\InfilonMVCWebApp\\InfilonMVCWebApp.csproj",
+      "projectPath": "C:\\Users\\USER\\Documents\\GitHub\\harshitaKomlekar\\InfilonMVCWebApp\\InfilonMVCWebApp\\InfilonMVCWebApp.csproj",
       "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\USER\\source\\repos\\InfilonMVCWebApp\\InfilonMVCWebApp\\obj\\",
+      "outputPath": "C:\\Users\\USER\\Documents\\GitHub\\harshitaKomlekar\\InfilonMVCWebApp\\InfilonMVCWebApp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\USER\\AppData\\Roaming\\NuGet\\NuGet.Config",
